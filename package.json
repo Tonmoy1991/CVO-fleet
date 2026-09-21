@@ -1,0 +1,20 @@
+{
+  "name": "cvo-fleet-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CVO Fleet Intelligence \u2014 single-file interactive dashboard of the NetApp Cloud Volumes ONTAP fleet (fleet map \u2192 connector topology \u2192 CVO deep dive).",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:csv": "node scripts/build.mjs --csv",
+    "test": "node spec/model.test.cjs",
+    "verify": "node scripts/build.mjs --stamp \"2026-09-18 17:26 UTC\" --out dist/verify.html && node scripts/verify.mjs",
+    "dev": "node scripts/build.mjs && npx --yes serve dist -l 5173",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Tonmoy Mukherjee, CSE, NetApp",
+  "license": "UNLICENSED"
+}

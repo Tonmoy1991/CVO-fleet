@@ -1,0 +1,746 @@
+{
+ "af-south-1": {
+  "city": "Cape Town",
+  "country": "South Africa",
+  "lat": -33.925,
+  "lon": 18.424
+ },
+ "africa-south1": {
+  "city": "Johannesburg",
+  "country": "South Africa",
+  "lat": -25.731,
+  "lon": 28.218
+ },
+ "ap-east-1": {
+  "city": "Hong Kong",
+  "country": "Hong Kong",
+  "lat": 22.267,
+  "lon": 114.188
+ },
+ "ap-northeast-1": {
+  "city": "Tokyo",
+  "country": "Japan",
+  "lat": 35.68,
+  "lon": 139.77
+ },
+ "ap-northeast-2": {
+  "city": "Seoul",
+  "country": "South Korea",
+  "lat": 37.5665,
+  "lon": 126.978
+ },
+ "ap-northeast-3": {
+  "city": "Osaka",
+  "country": "Japan",
+  "lat": 34.69,
+  "lon": 135.5
+ },
+ "ap-south-1": {
+  "city": "Mumbai",
+  "country": "India",
+  "lat": 19.076,
+  "lon": 72.878
+ },
+ "ap-south-2": {
+  "city": "Hyderabad",
+  "country": "India",
+  "lat": 17.385,
+  "lon": 78.487
+ },
+ "ap-southeast-1": {
+  "city": "Singapore",
+  "country": "Singapore",
+  "lat": 1.283,
+  "lon": 103.833
+ },
+ "ap-southeast-2": {
+  "city": "Sydney",
+  "country": "Australia",
+  "lat": -33.86,
+  "lon": 151.209
+ },
+ "ap-southeast-3": {
+  "city": "Jakarta",
+  "country": "Indonesia",
+  "lat": -6.208,
+  "lon": 106.845
+ },
+ "ap-southeast-4": {
+  "city": "Melbourne",
+  "country": "Australia",
+  "lat": -37.814,
+  "lon": 144.963
+ },
+ "asia-east1": {
+  "city": "Taiwan",
+  "country": "Taiwan",
+  "lat": 24.077,
+  "lon": 120.545
+ },
+ "asia-east2": {
+  "city": "Hong Kong",
+  "country": "Hong Kong",
+  "lat": 22.267,
+  "lon": 114.188
+ },
+ "asia-northeast1": {
+  "city": "Tokyo",
+  "country": "Japan",
+  "lat": 35.68,
+  "lon": 139.77
+ },
+ "asia-northeast2": {
+  "city": "Osaka",
+  "country": "Japan",
+  "lat": 34.69,
+  "lon": 135.5
+ },
+ "asia-northeast3": {
+  "city": "Seoul",
+  "country": "South Korea",
+  "lat": 37.5665,
+  "lon": 126.978
+ },
+ "asia-south1": {
+  "city": "Mumbai",
+  "country": "India",
+  "lat": 19.076,
+  "lon": 72.878
+ },
+ "asia-south2": {
+  "city": "Delhi",
+  "country": "India",
+  "lat": 28.614,
+  "lon": 77.209
+ },
+ "asia-southeast1": {
+  "city": "Singapore",
+  "country": "Singapore",
+  "lat": 1.283,
+  "lon": 103.833
+ },
+ "asia-southeast2": {
+  "city": "Jakarta",
+  "country": "Indonesia",
+  "lat": -6.208,
+  "lon": 106.845
+ },
+ "australia-southeast1": {
+  "city": "Sydney",
+  "country": "Australia",
+  "lat": -33.86,
+  "lon": 151.209
+ },
+ "australia-southeast2": {
+  "city": "Melbourne",
+  "country": "Australia",
+  "lat": -37.814,
+  "lon": 144.963
+ },
+ "australiacentral": {
+  "city": "Canberra",
+  "country": "Australia",
+  "lat": -35.308,
+  "lon": 149.124
+ },
+ "australiaeast": {
+  "city": "Sydney",
+  "country": "Australia",
+  "lat": -33.86,
+  "lon": 151.209
+ },
+ "australiasoutheast": {
+  "city": "Melbourne",
+  "country": "Australia",
+  "lat": -37.814,
+  "lon": 144.963
+ },
+ "brazilsouth": {
+  "city": "Sao Paulo",
+  "country": "Brazil",
+  "lat": -23.55,
+  "lon": -46.633
+ },
+ "brazilsoutheast": {
+  "city": "Rio de Janeiro",
+  "country": "Brazil",
+  "lat": -22.907,
+  "lon": -43.173
+ },
+ "ca-central-1": {
+  "city": "Montreal",
+  "country": "Canada",
+  "lat": 45.508,
+  "lon": -73.561
+ },
+ "ca-west-1": {
+  "city": "Calgary",
+  "country": "Canada",
+  "lat": 51.045,
+  "lon": -114.071
+ },
+ "canadacentral": {
+  "city": "Toronto",
+  "country": "Canada",
+  "lat": 43.653,
+  "lon": -79.383
+ },
+ "canadaeast": {
+  "city": "Quebec City",
+  "country": "Canada",
+  "lat": 46.817,
+  "lon": -71.217
+ },
+ "centralindia": {
+  "city": "Pune",
+  "country": "India",
+  "lat": 18.5822,
+  "lon": 73.9197
+ },
+ "centralus": {
+  "city": "Iowa",
+  "country": "USA",
+  "lat": 41.5908,
+  "lon": -93.6208
+ },
+ "chinaeast2": {
+  "city": "Shanghai",
+  "country": "China",
+  "lat": 31.23,
+  "lon": 121.474
+ },
+ "chinanorth3": {
+  "city": "Beijing",
+  "country": "China",
+  "lat": 39.904,
+  "lon": 116.407
+ },
+ "cn-north-1": {
+  "city": "Beijing",
+  "country": "China",
+  "lat": 39.904,
+  "lon": 116.407
+ },
+ "cn-northwest-1": {
+  "city": "Ningxia",
+  "country": "China",
+  "lat": 38.487,
+  "lon": 106.231
+ },
+ "eastasia": {
+  "city": "Hong Kong",
+  "country": "Hong Kong",
+  "lat": 22.267,
+  "lon": 114.188
+ },
+ "eastus": {
+  "city": "Virginia",
+  "country": "USA",
+  "lat": 37.3719,
+  "lon": -79.8164
+ },
+ "eastus2": {
+  "city": "Virginia",
+  "country": "USA",
+  "lat": 36.6681,
+  "lon": -78.3889
+ },
+ "eu-central-1": {
+  "city": "Frankfurt",
+  "country": "Germany",
+  "lat": 50.11,
+  "lon": 8.682
+ },
+ "eu-central-2": {
+  "city": "Zurich",
+  "country": "Switzerland",
+  "lat": 47.377,
+  "lon": 8.54
+ },
+ "eu-north-1": {
+  "city": "Stockholm",
+  "country": "Sweden",
+  "lat": 59.329,
+  "lon": 18.069
+ },
+ "eu-south-1": {
+  "city": "Milan",
+  "country": "Italy",
+  "lat": 45.464,
+  "lon": 9.19
+ },
+ "eu-south-2": {
+  "city": "Madrid",
+  "country": "Spain",
+  "lat": 40.417,
+  "lon": -3.703
+ },
+ "eu-west-1": {
+  "city": "Ireland",
+  "country": "Ireland",
+  "lat": 53.349,
+  "lon": -6.26
+ },
+ "eu-west-2": {
+  "city": "London",
+  "country": "UK",
+  "lat": 51.507,
+  "lon": -0.128
+ },
+ "eu-west-3": {
+  "city": "Paris",
+  "country": "France",
+  "lat": 48.857,
+  "lon": 2.352
+ },
+ "europe-central2": {
+  "city": "Warsaw",
+  "country": "Poland",
+  "lat": 52.23,
+  "lon": 21.011
+ },
+ "europe-north1": {
+  "city": "Hamina",
+  "country": "Finland",
+  "lat": 60.567,
+  "lon": 27.188
+ },
+ "europe-southwest1": {
+  "city": "Madrid",
+  "country": "Spain",
+  "lat": 40.417,
+  "lon": -3.703
+ },
+ "europe-west1": {
+  "city": "Belgium",
+  "country": "Belgium",
+  "lat": 50.471,
+  "lon": 3.818
+ },
+ "europe-west12": {
+  "city": "Turin",
+  "country": "Italy",
+  "lat": 45.07,
+  "lon": 7.687
+ },
+ "europe-west2": {
+  "city": "London",
+  "country": "UK",
+  "lat": 51.507,
+  "lon": -0.128
+ },
+ "europe-west3": {
+  "city": "Frankfurt",
+  "country": "Germany",
+  "lat": 50.11,
+  "lon": 8.682
+ },
+ "europe-west4": {
+  "city": "Netherlands",
+  "country": "Netherlands",
+  "lat": 53.436,
+  "lon": 6.836
+ },
+ "europe-west6": {
+  "city": "Zurich",
+  "country": "Switzerland",
+  "lat": 47.377,
+  "lon": 8.54
+ },
+ "europe-west8": {
+  "city": "Milan",
+  "country": "Italy",
+  "lat": 45.464,
+  "lon": 9.19
+ },
+ "europe-west9": {
+  "city": "Paris",
+  "country": "France",
+  "lat": 48.857,
+  "lon": 2.352
+ },
+ "francecentral": {
+  "city": "Paris",
+  "country": "France",
+  "lat": 46.3772,
+  "lon": 2.373
+ },
+ "francesouth": {
+  "city": "Marseille",
+  "country": "France",
+  "lat": 43.8345,
+  "lon": 2.1972
+ },
+ "germanynorth": {
+  "city": "Berlin",
+  "country": "Germany",
+  "lat": 53.073,
+  "lon": 8.806
+ },
+ "germanywestcentral": {
+  "city": "Frankfurt",
+  "country": "Germany",
+  "lat": 50.11,
+  "lon": 8.682
+ },
+ "il-central-1": {
+  "city": "Tel Aviv",
+  "country": "Israel",
+  "lat": 32.085,
+  "lon": 34.781
+ },
+ "indonesiacentral": {
+  "city": "Jakarta",
+  "country": "Indonesia",
+  "lat": -6.208,
+  "lon": 106.845
+ },
+ "israelcentral": {
+  "city": "Tel Aviv",
+  "country": "Israel",
+  "lat": 32.085,
+  "lon": 34.781
+ },
+ "italynorth": {
+  "city": "Milan",
+  "country": "Italy",
+  "lat": 45.464,
+  "lon": 9.19
+ },
+ "japaneast": {
+  "city": "Tokyo",
+  "country": "Japan",
+  "lat": 35.68,
+  "lon": 139.77
+ },
+ "japanwest": {
+  "city": "Osaka",
+  "country": "Japan",
+  "lat": 34.69,
+  "lon": 135.5
+ },
+ "jioindiacentral": {
+  "city": "Nagpur",
+  "country": "India",
+  "lat": 21.146,
+  "lon": 79.088
+ },
+ "jioindiawest": {
+  "city": "Jamnagar",
+  "country": "India",
+  "lat": 22.47,
+  "lon": 70.057
+ },
+ "koreacentral": {
+  "city": "Seoul",
+  "country": "South Korea",
+  "lat": 37.5665,
+  "lon": 126.978
+ },
+ "koreasouth": {
+  "city": "Busan",
+  "country": "South Korea",
+  "lat": 35.179,
+  "lon": 129.076
+ },
+ "malaysiawest": {
+  "city": "Kuala Lumpur",
+  "country": "Malaysia",
+  "lat": 3.139,
+  "lon": 101.687
+ },
+ "me-central-1": {
+  "city": "Dubai",
+  "country": "UAE",
+  "lat": 25.267,
+  "lon": 55.297
+ },
+ "me-central1": {
+  "city": "Doha",
+  "country": "Qatar",
+  "lat": 25.286,
+  "lon": 51.534
+ },
+ "me-central2": {
+  "city": "Dammam",
+  "country": "Saudi Arabia",
+  "lat": 26.42,
+  "lon": 50.088
+ },
+ "me-south-1": {
+  "city": "Bahrain",
+  "country": "Bahrain",
+  "lat": 26.067,
+  "lon": 50.557
+ },
+ "me-west1": {
+  "city": "Tel Aviv",
+  "country": "Israel",
+  "lat": 32.085,
+  "lon": 34.781
+ },
+ "mexicocentral": {
+  "city": "Queretaro",
+  "country": "Mexico",
+  "lat": 20.588,
+  "lon": -100.389
+ },
+ "newzealandnorth": {
+  "city": "Auckland",
+  "country": "New Zealand",
+  "lat": -36.848,
+  "lon": 174.763
+ },
+ "northamerica-northeast1": {
+  "city": "Montreal",
+  "country": "Canada",
+  "lat": 45.508,
+  "lon": -73.561
+ },
+ "northamerica-northeast2": {
+  "city": "Toronto",
+  "country": "Canada",
+  "lat": 43.653,
+  "lon": -79.383
+ },
+ "northcentralus": {
+  "city": "Illinois",
+  "country": "USA",
+  "lat": 41.8819,
+  "lon": -87.6278
+ },
+ "northeurope": {
+  "city": "Dublin",
+  "country": "Ireland",
+  "lat": 53.3478,
+  "lon": -6.2597
+ },
+ "norwayeast": {
+  "city": "Oslo",
+  "country": "Norway",
+  "lat": 59.913,
+  "lon": 10.752
+ },
+ "polandcentral": {
+  "city": "Warsaw",
+  "country": "Poland",
+  "lat": 52.23,
+  "lon": 21.011
+ },
+ "qatarcentral": {
+  "city": "Doha",
+  "country": "Qatar",
+  "lat": 25.286,
+  "lon": 51.534
+ },
+ "sa-east-1": {
+  "city": "Sao Paulo",
+  "country": "Brazil",
+  "lat": -23.55,
+  "lon": -46.633
+ },
+ "southafricanorth": {
+  "city": "Johannesburg",
+  "country": "South Africa",
+  "lat": -25.731,
+  "lon": 28.218
+ },
+ "southafricawest": {
+  "city": "Cape Town",
+  "country": "South Africa",
+  "lat": -33.925,
+  "lon": 18.424
+ },
+ "southamerica-east1": {
+  "city": "Sao Paulo",
+  "country": "Brazil",
+  "lat": -23.55,
+  "lon": -46.633
+ },
+ "southamerica-west1": {
+  "city": "Santiago",
+  "country": "Chile",
+  "lat": -33.449,
+  "lon": -70.669
+ },
+ "southcentralus": {
+  "city": "Texas",
+  "country": "USA",
+  "lat": 29.4167,
+  "lon": -98.5
+ },
+ "southeastasia": {
+  "city": "Singapore",
+  "country": "Singapore",
+  "lat": 1.283,
+  "lon": 103.833
+ },
+ "southindia": {
+  "city": "Chennai",
+  "country": "India",
+  "lat": 12.9822,
+  "lon": 80.1636
+ },
+ "spaincentral": {
+  "city": "Madrid",
+  "country": "Spain",
+  "lat": 40.417,
+  "lon": -3.703
+ },
+ "swedencentral": {
+  "city": "Gavle",
+  "country": "Sweden",
+  "lat": 60.675,
+  "lon": 17.142
+ },
+ "switzerlandnorth": {
+  "city": "Zurich",
+  "country": "Switzerland",
+  "lat": 47.451,
+  "lon": 8.564
+ },
+ "switzerlandwest": {
+  "city": "Geneva",
+  "country": "Switzerland",
+  "lat": 46.204,
+  "lon": 6.143
+ },
+ "uaecentral": {
+  "city": "Abu Dhabi",
+  "country": "UAE",
+  "lat": 24.466,
+  "lon": 54.367
+ },
+ "uaenorth": {
+  "city": "Dubai",
+  "country": "UAE",
+  "lat": 25.267,
+  "lon": 55.297
+ },
+ "uksouth": {
+  "city": "London",
+  "country": "UK",
+  "lat": 50.941,
+  "lon": -0.799
+ },
+ "ukwest": {
+  "city": "Cardiff",
+  "country": "UK",
+  "lat": 53.427,
+  "lon": -3.084
+ },
+ "us-central1": {
+  "city": "Iowa",
+  "country": "USA",
+  "lat": 41.262,
+  "lon": -95.861
+ },
+ "us-east-1": {
+  "city": "N. Virginia",
+  "country": "USA",
+  "lat": 39.043,
+  "lon": -77.487
+ },
+ "us-east-2": {
+  "city": "Ohio",
+  "country": "USA",
+  "lat": 39.961,
+  "lon": -82.998
+ },
+ "us-east1": {
+  "city": "South Carolina",
+  "country": "USA",
+  "lat": 33.196,
+  "lon": -80.013
+ },
+ "us-east4": {
+  "city": "N. Virginia",
+  "country": "USA",
+  "lat": 39.043,
+  "lon": -77.487
+ },
+ "us-east5": {
+  "city": "Columbus",
+  "country": "USA",
+  "lat": 39.962,
+  "lon": -82.999
+ },
+ "us-south1": {
+  "city": "Dallas",
+  "country": "USA",
+  "lat": 32.78,
+  "lon": -96.8
+ },
+ "us-west-1": {
+  "city": "N. California",
+  "country": "USA",
+  "lat": 37.35,
+  "lon": -121.96
+ },
+ "us-west-2": {
+  "city": "Oregon",
+  "country": "USA",
+  "lat": 45.87,
+  "lon": -119.688
+ },
+ "us-west1": {
+  "city": "Oregon",
+  "country": "USA",
+  "lat": 45.601,
+  "lon": -121.181
+ },
+ "us-west2": {
+  "city": "Los Angeles",
+  "country": "USA",
+  "lat": 34.052,
+  "lon": -118.244
+ },
+ "us-west3": {
+  "city": "Salt Lake City",
+  "country": "USA",
+  "lat": 40.761,
+  "lon": -111.891
+ },
+ "us-west4": {
+  "city": "Las Vegas",
+  "country": "USA",
+  "lat": 36.17,
+  "lon": -115.14
+ },
+ "westcentralus": {
+  "city": "Wyoming",
+  "country": "USA",
+  "lat": 40.89,
+  "lon": -110.234
+ },
+ "westeurope": {
+  "city": "Amsterdam",
+  "country": "Netherlands",
+  "lat": 52.3667,
+  "lon": 4.9
+ },
+ "westindia": {
+  "city": "Mumbai",
+  "country": "India",
+  "lat": 19.088,
+  "lon": 72.868
+ },
+ "westus": {
+  "city": "California",
+  "country": "USA",
+  "lat": 37.783,
+  "lon": -122.417
+ },
+ "westus2": {
+  "city": "Washington",
+  "country": "USA",
+  "lat": 47.233,
+  "lon": -119.852
+ },
+ "westus3": {
+  "city": "Arizona",
+  "country": "USA",
+  "lat": 33.448,
+  "lon": -112.074
+ }
+}

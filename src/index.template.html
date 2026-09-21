@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>CVO Fleet Intelligence — Global Control Plane</title>
+<!--
+  CVO Fleet Intelligence — single-file interactive dashboard.
+  Editable zones in the code:  // [DATA]   // [THEME]   // [MAP]   // [GRAPH]
+  Libraries (pinned, script-only CDN): d3 7.9.0, topojson-client 3.1.0. World land outline is fetched from the same CDN
+  at runtime; offline the map degrades to a graticule globe and every other feature keeps working.
+-->
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="app-frame" class="app">
+<header class="top-nav" id="topbar">
+  <button class="brand" id="brand" aria-label="Return to global fleet" title="Back to the global fleet">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+    <span><strong>CVO</strong> FLEET INTELLIGENCE<small>GLOBAL CONTROL PLANE</small><small class="by">BY TONMOY MUKHERJEE</small></span>
+  </button>
+  <nav class="breadcrumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+  <div class="nav-actions">
+    <button class="icon-button" id="btn-story" aria-label="Play the auto guide (guided story)" title="Auto guide — walks Fleet → Connector → CVO with captions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg><span id="btn-story-label">Auto guide</span></button>
+    <button class="icon-button" id="btn-data" aria-label="Data source and column mapping"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg><span>Data</span></button>
+    <button class="icon-button" id="btn-export-png" aria-label="Download current view as PNG"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>PNG</span></button>
+    <button class="icon-button" id="btn-export-csv" aria-label="Export filtered rows as CSV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span>CSV</span></button>
+    <button class="icon-button compact" id="btn-cb" aria-label="Toggle colour-blind palette" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg></button>
+    <button class="icon-button compact" id="btn-present" aria-label="Toggle presentation mode (F)" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ LAYER 1: GLOBAL FLEET ============ -->
+  <section class="layer fleet-view" id="layer-fleet" data-layer="fleet">
+    <div class="map-stage">
+      <svg id="map" role="img" aria-labelledby="map-title map-desc">
+        <title id="map-title">Global CVO fleet map</title>
+        <desc id="map-desc">World map of Cloud Volumes ONTAP systems grouped by the cloud region they run in, with the Connectors that manage them.</desc>
+      </svg>
+      <div class="map-vignette"></div>
+    </div>
+    <div class="map-loading" id="map-loading"><div class="skeleton-globe"></div><span>Preparing the fleet…</span></div>
+
+    <div class="fleet-title" id="fleet-title">
+      <div class="eyebrow"><span class="live-dot"></span> GLOBAL ESTATE · <span id="source-name">EMBEDDED MASTER CSV</span></div>
+      <h1>Every system.<br><em>One living view.</em></h1>
+      <p>Explore the global Cloud Volumes ONTAP control plane—from fleet signal to individual environment.</p>
+    </div>
+
+    <div class="kpi-strip glass-panel" id="kpis" aria-label="Fleet key metrics"></div>
+
+    <div class="filter-bar glass-panel" id="controls" aria-label="Filters">
+      <div class="customer-picker" id="ms-customer"></div>
+      <label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="f-search" placeholder="Search fleet…" aria-label="Search systems and connectors"></label>
+      <div class="filters-row" id="filters-row"></div>
+      <div class="scope-switch" id="scope-switch" role="group" aria-label="Scope"><button data-scope="all" class="active" aria-pressed="true">All managed</button><button data-scope="cloud" aria-pressed="false">Cloud CVO</button></div>
+      <button class="clear-filters hidden" id="btn-clear" title="Clear all filters" aria-label="Clear all filters">✕ <span id="ctl-count"></span></button>
+    </div>
+
+    <aside class="executive-brief glass-panel" id="brief">
+      <header><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 2.5 11.3 7l4.5 1.4-4.5 1.4-1.4 4.5-1.4-4.5L4 8.4 8.5 7Z"/><path d="M18 14l.9 2.6 2.6.9-2.6.9L18 21l-.9-2.6-2.6-.9 2.6-.9Z"/></svg> FLEET INTELLIGENCE</span><button aria-label="Hide fleet brief" id="brief-close">×</button></header>
+      <div id="brief-body"></div>
+    </aside>
+    <button class="brief-toggle" id="brief-toggle">✦ Fleet brief</button>
+
+    <button class="map-label-toggle" id="unmapped" aria-label="On-premises systems without a map location"></button>
+
+    <div class="locs-rail glass-panel hidden" id="locs-rail"></div>
+    <div class="regional-rail glass-panel" id="bottom-rail"></div>
+
+    <div class="cluster-list glass-panel hidden" id="cluster-list" role="dialog" aria-label="Connectors at this location"></div>
+  </section>
+
+  <!-- ============ LAYER 2: TOPOLOGY ============ -->
+  <section class="layer graph-layout hidden" id="layer-graph" data-layer="graph">
+    <aside class="connector-panel glass-panel" id="graph-panel"></aside>
+    <div class="graph-stage">
+      <canvas id="graph" class="graph-canvas" aria-label="Relationship graph of connectors and CVO systems" role="img"></canvas>
+      <div class="graph-toolbar glass-panel" id="graph-controls">
+        <label class="search-control"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="g-search" placeholder="Search to focus…" aria-label="Search nodes"></label>
+        <label>Colour <select id="g-color">
+          <option value="health">Health</option><option value="type">Type</option><option value="provider">Cloud</option><option value="ontap">ONTAP release</option><option value="license">Licence</option><option value="ha">HA / single</option>
+        </select></label>
+        <button class="toggle-button active" id="g-labels" aria-pressed="true">Labels</button>
+        <button class="toggle-button" id="g-infra" aria-pressed="false">Context</button>
+        <label class="range-control">Spacing <input type="range" id="g-dist" min="60" max="200" value="90"></label>
+      </div>
+      <div class="graph-legend" id="g-legend"></div>
+      <div class="map-hint graph-hint" id="graph-hint">CONNECTOR → CVO · WHEEL TO ZOOM · DOUBLE-CLICK TO FIT · CLICK A CVO TO DRILL IN</div>
+    </div>
+    <div class="map-tooltip hidden" id="graph-tip"></div>
+  </section>
+
+  <!-- ============ LAYER 3: CVO DEEP DIVE ============ -->
+  <section class="layer cvo-page hidden" id="layer-cvo" data-layer="cvo">
+    <div id="cvo-wrap"></div>
+  </section>
+</main>
+
+<div class="map-tooltip hidden" id="tooltip" role="tooltip"></div>
+<div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+<div class="story-caption hidden" id="story-caption"></div>
+<div class="drop-overlay hidden" id="drop-overlay"><div>Drop a fleet CSV export to load it</div></div>
+<div class="shortcut-hint" id="keys"><span><kbd>←</kbd><kbd>→</kbd> Navigate</span><span><kbd>F</kbd> Present</span><span><kbd>Esc</kbd> Back</span><span><kbd>/</kbd> Search</span></div>
+
+<div class="modal-backdrop hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="data-modal">
+    <header><div><div class="eyebrow">SOURCE</div><h2 id="modal-title">Data manager</h2></div><button id="modal-close" aria-label="Close">✕</button></header>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+</div>
+
+<!-- // [DATA] ================================================================
+     Embedded fleet export. Swap this block for a new export, or drop a CSV onto
+     the page at runtime. Format: {"columns":[...], "rows":[[...],...]}
+     ======================================================================= -->
+<script id="cvo-data" type="application/json">__DATA__</script>
+<script id="cvo-gazetteer" type="application/json">__GAZ__</script>
+
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>

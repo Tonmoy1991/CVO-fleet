@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+*.csv text
+release/cvo-fleet.html -diff
